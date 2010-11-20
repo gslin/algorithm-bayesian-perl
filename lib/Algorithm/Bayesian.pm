@@ -1,13 +1,14 @@
 package Algorithm::Bayesian;
 
 use Carp;
+use Math::BigFloat;
 use strict;
 use warnings;
 
 use constant HAMSTR => '*ham';
 use constant SPAMSTR => '*spam';
 
-our $VERSION = '0.1.1';
+our $VERSION = '0.2';
 
 =head1 NAME
 
@@ -164,8 +165,8 @@ Calculate the spam probability of @words. The range of $pr will be in 0 to 1.
 sub test {
     my $self = shift or croak;
 
-    my $a1 = 1;
-    my $a2 = 1;
+    my $a1 = Math::BigFloat->new('1');
+    my $a2 = $a1->copy;
 
     foreach my $w (@_) {
 	my $pr = $self->testWord($w);
@@ -178,7 +179,7 @@ sub test {
 	$a2 *= 2 * (1 - $pr);
     }
 
-    return $a1 / ($a1 + $a2);
+    return ($a1 / ($a1 + $a2))->bstr;
 }
 
 =head2 testWord
