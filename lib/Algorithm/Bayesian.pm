@@ -25,13 +25,20 @@ Algorithm::Bayesian - Bayesian Spam Filtering Algorithm
     $b->spam('spamword1', 'spamword2', ...);
     $b->ham('hamword1', 'hamword2', ...);
 
-    my $bool = $b->test('word1', 'word2', ...);
+    my $pr = $b->test('word1', 'word2', ...);
 
 =head1 DESCRIPTION
+
+Algorithm::Bayesian provide an easy way to handle Bayesian spam filtering algorithm.
 
 =head1 SUBROUTINES/METHODS
 
 =head2 new
+
+    my $b = Algorithm::Bayesian->new(\%hash);
+
+Constructor. Simple hash would be fine. You can use C<Tie::DBI> to store data to RDBM, or othre key-value storage.
+
 =cut
 
 sub new {
@@ -45,6 +52,11 @@ sub new {
 }
 
 =head2 getHam
+
+    my $num = $b->getHam($word);
+
+Get $word count in Ham.
+
 =cut
 
 sub getHam {
@@ -57,6 +69,11 @@ sub getHam {
 }
 
 =head2 getHamNum
+
+    my $num = $b->getHamNum;
+
+Get Ham count.
+
 =cut
 
 sub getHamNum {
@@ -67,6 +84,11 @@ sub getHamNum {
 }
 
 =head2 getSpam
+
+    my $num = $b->getSpam($word);
+
+Get $word count in Spam.
+
 =cut
 
 sub getSpam {
@@ -79,6 +101,11 @@ sub getSpam {
 }
 
 =head2 getSpamNum
+
+    my $num = $b->getSpamNum;
+
+Get Spam count.
+
 =cut
 
 sub getSpamNum {
@@ -89,6 +116,11 @@ sub getSpamNum {
 }
 
 =head2 ham
+
+    $b->ham(@words);
+
+Train @words as Ham.
+
 =cut
 
 sub ham {
@@ -102,7 +134,12 @@ sub ham {
     $s->{HAMSTR}++;
 }
 
-=head2 ham
+=head2 spam
+
+    $b->spam(@words);
+
+Train @words as Spam.
+
 =cut
 
 sub spam {
@@ -117,6 +154,11 @@ sub spam {
 }
 
 =head2 test
+
+    my $pr = $b->test(@words);
+
+Calculate the spam probability of @words. The range of $pr will be in 0 to 1.
+
 =cut
 
 sub test {
@@ -140,6 +182,13 @@ sub test {
 }
 
 =head2 testWord
+
+    my $pr = $b->testWord($word);
+
+Calculate the spam probability of $word.
+
+The range of $pr will be in 0 to 1.  For non-existence word, it will be 0.5.
+
 =cut
 
 sub testWord {
