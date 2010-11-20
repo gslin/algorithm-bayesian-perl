@@ -1,0 +1,9 @@
+Build.PL
+Changes
+lib/Algorithm/Bayesian.pm
+Makefile.PL
+MANIFEST
+META.yml
+README
+t/clean-state.t
+t/simple.t

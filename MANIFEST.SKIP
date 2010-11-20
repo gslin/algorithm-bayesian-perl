@@ -1,0 +1,10 @@
+\.bak$
+^Build$
+^MANIFEST\.SKIP$
+^MYMETA.yml$
+^\.
+^\.gitignore$
+^\.shipit$
+^_build
+^blib
+~$

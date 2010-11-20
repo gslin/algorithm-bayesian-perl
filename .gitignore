@@ -1,0 +1,14 @@
+*.bak
+*.tar.gz
+.lwpcookies
+Algorithm-Bayesian-*
+Build
+Build.bat
+MYMETA.yml
+Makefile
+Makefile.old
+_build*
+blib*
+cover_db
+pm_to_blib*
+pod2htm*.tmp
