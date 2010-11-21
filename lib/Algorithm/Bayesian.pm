@@ -38,7 +38,7 @@ Algorithm::Bayesian provide an easy way to handle Bayesian spam filtering algori
 
     my $b = Algorithm::Bayesian->new(\%hash);
 
-Constructor. Simple hash would be fine. You can use C<Tie::DBI> to store data to RDBM, or othre key-value storage.
+Constructor. Simple hash would be fine. You can use L<Tie::DBI> to store data to RDBM, or othre key-value storage.
 
 =cut
 
@@ -56,7 +56,7 @@ sub new {
 
     my $num = $b->getHam($word);
 
-Get $word count in Ham.
+Get C<$word> count in Ham.
 
 =cut
 
@@ -88,7 +88,7 @@ sub getHamNum {
 
     my $num = $b->getSpam($word);
 
-Get $word count in Spam.
+Get C<$word> count in Spam.
 
 =cut
 
@@ -120,7 +120,7 @@ sub getSpamNum {
 
     $b->ham(@words);
 
-Train @words as Ham.
+Train C<@words> as Ham.
 
 =cut
 
@@ -139,7 +139,7 @@ sub ham {
 
     $b->spam(@words);
 
-Train @words as Spam.
+Train C<@words> as Spam.
 
 =cut
 
@@ -158,7 +158,7 @@ sub spam {
 
     my $pr = $b->test(@words);
 
-Calculate the spam probability of @words. The range of $pr will be in 0 to 1.
+Calculate the spam probability of C<@words>. The range of C<$pr> will be in 0 to 1.
 
 =cut
 
@@ -186,9 +186,9 @@ sub test {
 
     my $pr = $b->testWord($word);
 
-Calculate the spam probability of $word.
+Calculate the spam probability of C<$word>.
 
-The range of $pr will be in 0 to 1.  For non-existence word, it will be 0.5.
+The range of C<$pr> will be in 0 to 1.  For non-existence word, it will be 0.5.
 
 =cut
 
