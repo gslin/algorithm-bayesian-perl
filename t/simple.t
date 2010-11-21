@@ -10,8 +10,8 @@ can_ok($s, 'ham');
 can_ok($s, 'spam');
 
 $s->spam('word1');
-is($s->getSpamNum, 1);
-is($s->getHamNum, 0);
+is($s->getSpam, 1);
+is($s->getHam, 0);
 
 ok($s->testWord('word1') > 0.5);
 ok($s->test('word1') > 0.5);

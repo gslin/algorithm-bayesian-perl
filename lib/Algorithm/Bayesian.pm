@@ -64,24 +64,10 @@ sub getHam {
     my $self = shift or croak;
     my $s = $self->{storage} or croak;
 
-    my $w = shift or croak;
+    my $w = shift;
 
+    return $s->{HAMSTR} if !defined $w;
     return $s->{"h$w"} || 0;
-}
-
-=head2 getHamNum
-
-    my $num = $b->getHamNum;
-
-Get Ham count.
-
-=cut
-
-sub getHamNum {
-    my $self = shift or croak;
-    my $s = $self->{storage} or croak;
-
-    return $s->{HAMSTR};
 }
 
 =head2 getSpam
@@ -96,24 +82,10 @@ sub getSpam {
     my $self = shift or croak;
     my $s = $self->{storage} or croak;
 
-    my $w = shift or croak;
+    my $w = shift;
 
+    return $s->{SPAMSTR} if !defined $w;
     return $s->{"s$w"} || 0;
-}
-
-=head2 getSpamNum
-
-    my $num = $b->getSpamNum;
-
-Get Spam count.
-
-=cut
-
-sub getSpamNum {
-    my $self = shift or croak;
-    my $s = $self->{storage} or croak;
-
-    return $s->{SPAMSTR};
 }
 
 =head2 ham
@@ -196,8 +168,8 @@ sub testWord {
     my $self = shift or croak;
     my $w = shift or croak;
 
-    my $hamNum = $self->getHamNum;
-    my $spamNum = $self->getSpamNum;
+    my $hamNum = $self->getHam;
+    my $spamNum = $self->getSpam;
     my $totalNum = $hamNum + $spamNum;
 
     return 0.5 if 0 == $totalNum;
