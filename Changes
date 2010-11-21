@@ -1,5 +1,8 @@
 Revision history for Algorithm-Bayesian
 
+0.3	Nov 21, 2010
+	Using C<...> to present variables.
+
 0.2	Nov 21, 2010
 	Using Math::BigFloat to avoid precision problem.
 
