@@ -1,15 +1,15 @@
 Revision history for Algorithm-Bayesian
 
 0.3	Nov 21, 2010
-	Using C<...> to present variables.
-	Remove get{Ham,Spam}Num, just use get{Ham,Spam} without argument.
+	* Using C<...> to present variables.
+	* Remove get{Ham,Spam}Num, just use get{Ham,Spam} without argument.
 
 0.2	Nov 21, 2010
-	Using Math::BigFloat to avoid precision problem.
+	* Using Math::BigFloat to avoid precision problem.
 
 0.1.1	Nov 21, 2010
-	Add documents.
+	* Add documents.
 
 0.1	Nov 21, 2010
-	First version.
+	* First version.
 
