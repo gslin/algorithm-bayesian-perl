@@ -7,6 +7,7 @@ Build.bat
 META.yml
 MYMETA.yml
 Makefile
+Makefile.PL
 Makefile.old
 _build*
 blib*
