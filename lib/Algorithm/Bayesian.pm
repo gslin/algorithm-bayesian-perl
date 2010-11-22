@@ -8,7 +8,7 @@ use warnings;
 use constant HAMSTR => '*ham';
 use constant SPAMSTR => '*spam';
 
-our $VERSION = '0.3';
+our $VERSION = '0.4';
 
 =head1 NAME
 
@@ -38,7 +38,7 @@ Algorithm::Bayesian provide an easy way to handle Bayesian spam filtering algori
 
     my $b = Algorithm::Bayesian->new(\%hash);
 
-Constructor. Simple hash would be fine. You can use L<Tie::DBI> to store data to RDBM, or othre key-value storage.
+Constructor. Simple hash would be fine. You can use L<Tie::DBI> to store data to RDBM, or other key-value storage.
 
 =cut
 
