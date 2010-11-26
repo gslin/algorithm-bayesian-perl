@@ -1,7 +1,7 @@
 #!perl -T
 
 use Algorithm::Bayesian;
-use Test::More tests => 10;
+use Test::More tests => 11;
 
 my %hash;
 my $s = Algorithm::Bayesian->new(\%hash);
@@ -20,4 +20,5 @@ ok($s->test('word1') > 0.5);
 $s->ham('word1', 'word2');
 ok($s->testWord('word2') < 0.5);
 is($s->testWord('word1'), 0.5);
+is($s->testWord('word3'), 0.5);
 ok($s->test('word1', 'word2') < 0.5);
