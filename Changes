@@ -2,6 +2,7 @@ Revision history for Algorithm-Bayesian
 
 0.4	Nov 23, 2010
 	* Typo fix, and remove unused paragraph.
+	* Add more tests.
 
 0.3	Nov 21, 2010
 	* Using C<...> to present variables.
