@@ -173,14 +173,19 @@ sub testWord {
     my $totalNum = $hamNum + $spamNum;
 
     return 0.5 if 0 == $totalNum;
-    return 1 if 0 == $hamNum;
-    return 0 if 0 == $spamNum;
+
+    my $wSpam = $self->getSpam($w);
+    my $wHam = $self->getHam($w);
+
+    return 0.5 if 0 == $wSpam and 0 == $wHam;
+    return 0 if 0 == $wSpam;
+    return 1 if 0 == $wHam;
 
     my $hamPr = $hamNum / $totalNum;
     my $spamPr = $spamNum / $totalNum;
 
-    my $a1 = $self->getSpam($w) * $spamPr / $spamNum;
-    my $a2 = $self->getHam($w) * $hamPr / $hamNum;
+    my $a1 = $wSpam * $spamPr / $spamNum;
+    my $a2 = $wHam * $hamPr / $hamNum;
 
     return $a1 / ($a1 + $a2);
 }
