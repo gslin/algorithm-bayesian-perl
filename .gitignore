@@ -9,6 +9,7 @@ MYMETA.yml
 Makefile
 Makefile.PL
 Makefile.old
+SIGNATURE
 _build*
 blib*
 cover_db
