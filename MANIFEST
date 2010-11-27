@@ -1,9 +1,10 @@
 Build.PL
 Changes
-lib/Algorithm/Bayesian.pm
-Makefile.PL
 MANIFEST
 META.yml
+Makefile.PL
 README
+SIGNATURE
+lib/Algorithm/Bayesian.pm
 t/clean-state.t
 t/simple.t
