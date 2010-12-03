@@ -2,7 +2,7 @@
 ^Build$
 ^MANIFEST\.SKIP$
 ^MYMETA.yml$
-^cover_db$
+^cover_db
 ^\.
 ^\.gitignore$
 ^\.shipit$
