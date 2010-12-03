@@ -6,9 +6,6 @@ use Test::More;
 my %hash;
 my $s = Algorithm::Bayesian->new(\%hash);
 
-isa_ok($s, 'Algorithm::Bayesian');
-can_ok($s, 'test');
-
 is($s->getHam, 0);
 is($s->getSpam, 0);
 
