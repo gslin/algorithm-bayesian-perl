@@ -1,5 +1,9 @@
 Revision history for Algorithm-Bayesian
 
+0.5	Dec 04, 2010
+	* Add more tests.
+	* Specify Math::BigFloat precision.
+
 0.4	Nov 28, 2010
 	* Typo fix, and remove unused paragraph.
 	* Add more tests.

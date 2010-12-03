@@ -8,7 +8,7 @@ use warnings;
 use constant HAMSTR => '*ham';
 use constant SPAMSTR => '*spam';
 
-our $VERSION = '0.4';
+our $VERSION = '0.5';
 
 =head1 NAME
 
