@@ -99,7 +99,7 @@ sub ham {
     my $s = $self->{storage} or croak;
 
     foreach my $w (@_) {
-	$s->{"h$w"}++;
+        $s->{"h$w"}++;
     }
 
     $s->{HAMSTR}++;
@@ -118,7 +118,7 @@ sub spam {
     my $s = $self->{storage} or croak;
 
     foreach my $w (@_) {
-	$s->{"s$w"}++;
+        $s->{"s$w"}++;
     }
 
     $s->{SPAMSTR}++;
@@ -140,14 +140,14 @@ sub test {
     my $a2 = $a1->copy;
 
     foreach my $w (@_) {
-	my $pr = $self->testWord($w);
+        my $pr = $self->testWord($w);
 
-	# Avoid 0/1
-	$pr = 0.99 if $pr > 0.99;
-	$pr = 0.01 if $pr < 0.01;
+        # Avoid 0/1
+        $pr = 0.99 if $pr > 0.99;
+        $pr = 0.01 if $pr < 0.01;
 
-	$a1 *= 2 * $pr;
-	$a2 *= 2 * (1 - $pr);
+        $a1 *= 2 * $pr;
+        $a2 *= 2 * (1 - $pr);
     }
 
     return ($a1 / ($a1 + $a2))->bstr;
